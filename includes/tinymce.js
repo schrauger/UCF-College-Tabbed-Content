@@ -31,6 +31,9 @@
                 var button = this.buttons['ucf_college_shortcodes_key'];
                 console.log(button);
                 if (button){
+                    // load all the buttons that were written to the page header as javascript data arrays
+                    
+                    
                     button.menu.push(
                         {
                             title: shortcode_name,
