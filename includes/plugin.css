@@ -1,0 +1,36 @@
+.tabs {
+  margin-bottom: 50px; }
+  .tabs .button-menu {
+    border-bottom: 1px solid #ccc; }
+  .tabs .button {
+    background: #f7f7f7;
+    color: #000;
+    font-size: 13px;
+    width: 206px;
+    padding: 20px 10px;
+    text-align: center;
+    display: inline-block; }
+    .tabs .button:hover {
+      background: #f0f0f0; }
+  .tabs .menu-expanded {
+    display: none;
+    padding: 25px;
+    min-height: 280px;
+    position: relative;
+    overflow: hidden; }
+    .tabs .menu-expanded li {
+      list-style: none;
+      padding: 10px;
+      margin-left: -65px; }
+      .tabs .menu-expanded li:nth-child(odd) {
+        background: #f7f7f7; }
+    .tabs .menu-expanded .button {
+      margin-bottom: 10px; }
+    .tabs .menu-expanded[for=online-library]:before {
+      left: 35%; }
+    .tabs .menu-expanded[for=health-campus]:before {
+      left: 60%; }
+    .tabs .menu-expanded[for=residents]:before {
+      left: 85%; }
+
+/*# sourceMappingURL=plugin.css.map */

@@ -1,0 +1,58 @@
+
+$black: #000;
+
+.tabs {
+	margin-bottom: 50px;
+
+	.button-menu {
+		border-bottom: 1px solid #ccc;
+	}
+
+	.button {
+		background: #f7f7f7;
+		color: $black;
+		font-size: 13px;
+		width: 206px;
+		padding: 20px 10px;
+		text-align: center;
+		display: inline-block;
+
+		&:hover {
+			background: #f0f0f0;
+		}
+	}
+
+	.menu-expanded {
+		display: none;
+		padding: 25px;
+		min-height: 280px;
+		position: relative;
+		overflow: hidden;
+
+		li {
+			list-style: none;
+			padding: 10px;
+			margin-left: -65px;
+
+			&:nth-child(odd) {
+				background: #f7f7f7;
+			}
+		}
+
+		.button {
+			margin-bottom: 10px;
+		}
+
+		&[for=online-library]:before {
+			left: 35%;
+		}
+
+		&[for=health-campus]:before {
+			left: 60%;
+		}
+
+		&[for=residents]:before {
+			left: 85%;
+		}
+	}
+}
