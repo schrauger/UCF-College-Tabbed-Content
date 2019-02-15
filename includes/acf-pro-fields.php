@@ -37,7 +37,7 @@ class ucf_college_tabbed_list_acf_pro_fields {
                             'collapsed'         => 'field_5c59e0e7e2bc6',
                             'min'               => 1,
                             'max'               => 6,
-                            'layout'            => 'table',
+                            'layout'            => 'row',
                             'button_label'      => 'Add tab',
                             'sub_fields'        => array(
                                 array(
