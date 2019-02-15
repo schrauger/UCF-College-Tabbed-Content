@@ -5,6 +5,8 @@ jQuery( document ).ready(function($) {
         //console.log(section_name);
         $('.menu-expanded[for="' + section_name + '"]').show();
         $('.menu-expanded[for!="' + section_name + '"]').hide();
+        $('.tab-active').removeClass('tab-active');
+        $(this).addClass('tab-active');
         event.preventDefault();
     });
     $('select.mobile').on('change', function(event, element){
@@ -12,9 +14,10 @@ jQuery( document ).ready(function($) {
         //console.log(section_name);
         $('.menu-expanded[for="' + section_name + '"]').show();
         $('.menu-expanded[for!="' + section_name + '"]').hide();
+        $('.tab-active').removeClass('tab-active');
+        $(this).addClass('tab-active');
         event.preventDefault();
     });
-    // have the first section be pre-expanded
-    var section_name = $('.toggle').first().data('id');
-    $('.menu-expanded[for="' + section_name + '"]').show();
+    // have the first tab be pre-opened
+    var section_name = $('.toggle').first().click();
 });
