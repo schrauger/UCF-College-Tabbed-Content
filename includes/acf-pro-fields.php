@@ -19,15 +19,15 @@ class ucf_college_tabbed_list_acf_pro_fields {
             acf_add_local_field_group(
                 array(
                     'key'                   => 'group_5c59e0b493529',
-                    'title'                 => 'Tabbed List',
+                    'title'                 => 'Tabbed list',
                     'fields'                => array(
                         array(
                             'key'               => 'field_5c59e0bbe2bc5',
-                            'label'             => 'Tab (Repeater)',
+                            'label'             => 'Tab (repeater)',
                             'name'              => 'tab_repeater',
                             'type'              => 'repeater',
                             'instructions'      => '',
-                            'required'          => 0,
+                            'required'          => 1,
                             'conditional_logic' => 0,
                             'wrapper'           => array(
                                 'width' => '',
@@ -37,16 +37,16 @@ class ucf_college_tabbed_list_acf_pro_fields {
                             'collapsed'         => 'field_5c59e0e7e2bc6',
                             'min'               => 1,
                             'max'               => 6,
-                            'layout'            => 'row',
+                            'layout'            => 'block',
                             'button_label'      => 'Add tab',
                             'sub_fields'        => array(
                                 array(
                                     'key'               => 'field_5c59e0e7e2bc6',
-                                    'label'             => 'Tab Label',
+                                    'label'             => 'Tab label',
                                     'name'              => 'tab_label',
                                     'type'              => 'text',
                                     'instructions'      => '',
-                                    'required'          => 0,
+                                    'required'          => 1,
                                     'conditional_logic' => 0,
                                     'wrapper'           => array(
                                         'width' => '',
@@ -61,7 +61,7 @@ class ucf_college_tabbed_list_acf_pro_fields {
                                 ),
                                 array(
                                     'key'               => 'field_5c59e0fde2bc7',
-                                    'label'             => 'Tab content (group)',
+                                    'label'             => 'Tab content',
                                     'name'              => 'tab_content_group',
                                     'type'              => 'group',
                                     'instructions'      => '',
@@ -76,7 +76,7 @@ class ucf_college_tabbed_list_acf_pro_fields {
                                     'sub_fields'        => array(
                                         array(
                                             'key'               => 'field_5c59e149e2bc8',
-                                            'label'             => 'List Label',
+                                            'label'             => 'List header',
                                             'name'              => 'list_label',
                                             'type'              => 'text',
                                             'instructions'      => '',
