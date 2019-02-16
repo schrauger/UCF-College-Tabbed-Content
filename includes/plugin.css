@@ -1,28 +1,46 @@
 .tabs {
   margin-bottom: 50px; }
-  .tabs .button-menu {
-    border-bottom: 1px solid #ccc; }
   .tabs .button {
-    background: #f7f7f7;
+    background: #ffcc00;
     color: #000;
-    font-size: 13px;
+    font-size: 16px;
     width: 206px;
     padding: 20px 10px;
+    margin-right: 10px;
     text-align: center;
-    display: inline-block; }
+    display: inline-block;
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    border-color: #f0f0f0; }
+    .tabs .button.tab-active {
+      background: #f8f8f8;
+      border-color: #f0f0f0; }
     .tabs .button:hover {
-      background: #f0f0f0; }
+      background: #f0f0f0;
+      text-decoration: none; }
   .tabs .menu-expanded {
     display: none;
     padding: 25px;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    background: #f8f8f8;
+    border-color: #f0f0f0;
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 0px; }
     .tabs .menu-expanded li {
       list-style: none;
       padding: 10px;
       margin-left: -65px; }
       .tabs .menu-expanded li:nth-child(odd) {
-        background: #f7f7f7; }
+        background: #fff; }
+    .tabs .menu-expanded tr:nth-child(odd) {
+      background: #fff; }
     .tabs .menu-expanded .button {
       margin-bottom: 10px; }
     .tabs .menu-expanded[for=online-library]:before {
@@ -31,5 +49,3 @@
       left: 60%; }
     .tabs .menu-expanded[for=residents]:before {
       left: 85%; }
-
-/*# sourceMappingURL=plugin.css.map */
