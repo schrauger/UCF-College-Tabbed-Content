@@ -43,7 +43,7 @@ class ucf_college_tabbed_content {
         wp_enqueue_script(
             'ucf-college-tabbed-content-script',
             plugin_dir_url(__FILE__) . 'includes/plugin.js',
-            false,
+            array('jquery'),
             filemtime( plugin_dir_path(__FILE__).'/includes/plugin.js'),
             false
         );
