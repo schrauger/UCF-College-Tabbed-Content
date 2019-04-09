@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF College Tabbed Content
 Description: Provides a shortcode for a tabbed content, to be used in the UCF Colleges Theme
-Version: 1.1.1
+Version: 1.1.2
 Author: Stephen Schrauger
 Plugin URI: https://github.com/schrauger/UCF-College-Tabbed-Content
 Github Plugin URI: schrauger/UCF-College-Tabbed-Content
@@ -29,24 +29,27 @@ class ucf_college_tabbed_content {
     }
 
     function add_css(){
-        wp_enqueue_style(
-            'ucf-college-tabbed-content-style',
-            plugin_dir_url(__FILE__) . '/includes/plugin.css',
-            false,
-            filemtime( plugin_dir_path(__FILE__).'/includes/plugin.css'),
-            false
-        );
+	    if (file_exists(plugin_dir_path(__FILE__).'/includes/plugin.css')) {
+		    wp_enqueue_style(
+			    'ucf-college-tabbed-content-style',
+			    plugin_dir_url( __FILE__ ) . '/includes/plugin.css',
+			    false,
+			    filemtime( plugin_dir_path( __FILE__ ) . '/includes/plugin.css' ),
+			    false
+		    );
+	    }
     }
 
     function add_js(){
-
-        wp_enqueue_script(
-            'ucf-college-tabbed-content-script',
-            plugin_dir_url(__FILE__) . 'includes/plugin.js',
-            array('jquery'),
-            filemtime( plugin_dir_path(__FILE__).'/includes/plugin.js'),
-            false
-        );
+	    if (file_exists(plugin_dir_path(__FILE__).'/includes/plugin.js')) {
+		    wp_enqueue_script(
+			    'ucf-college-tabbed-content-script',
+			    plugin_dir_url( __FILE__ ) . 'includes/plugin.js',
+			    array( 'jquery' ),
+			    filemtime( plugin_dir_path( __FILE__ ) . '/includes/plugin.js' ),
+			    false
+		    );
+	    }
     }
     
     
