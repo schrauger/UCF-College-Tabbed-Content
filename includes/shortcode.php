@@ -7,24 +7,24 @@ class ucf_college_tabbed_content_shortcode {
     //const get_param_group = 'people_group'; // group or category person is in
 
     function __construct() {
-        add_action( 'init', array( $this, 'add_shortcode' ) );
-        add_filter( 'query_vars', array($this, 'add_query_vars_filter' )); // tell wordpress about new url parameters
-        add_filter( 'ucf_college_shortcode_menu_item', array($this, 'add_ckeditor_shortcode'));
+//        add_action( 'init', array( $this, 'add_shortcode' ) );
+//        add_filter( 'query_vars', array($this, 'add_query_vars_filter' )); // tell wordpress about new url parameters
+//        add_filter( 'ucf_college_shortcode_menu_item', array($this, 'add_ckeditor_shortcode'));
     }
 
     /**
      * Adds the shortcode to wordpress' index of shortcodes
      */
-    function add_shortcode() {
+    static function add_shortcode() {
         if ( ! ( shortcode_exists( self::shortcode_slug ) ) ) {
-            add_shortcode( self::shortcode_slug, array($this, 'replacement' ));
+            add_shortcode( self::shortcode_slug, array('ucf_college_tabbed_content_shortcode', 'replacement' ));
         }
     }
 
     /**
      * Adds the shortcode to the ckeditor dropdown menu
      */
-    function add_ckeditor_shortcode($shortcode_array){
+    static function add_ckeditor_shortcode($shortcode_array){
         $shortcode_array[] = array(
             'slug' => self::shortcode_slug,
             'name' => self::shortcode_name,
@@ -39,7 +39,7 @@ class ucf_college_tabbed_content_shortcode {
      *
      * @return array
      */
-    function add_query_vars_filter($vars){
+    static function add_query_vars_filter($vars){
         //$vars[] = self::get_param_group;
         return $vars;
     }
@@ -50,7 +50,7 @@ class ucf_college_tabbed_content_shortcode {
      *
      * @return mixed
      */
-    function replacement( $attrs = null ){
+    static function replacement( $attrs = null ){
         $replacement_data = ''; //string of html to return
 
         if (have_rows('tab_repeater')){
@@ -89,6 +89,10 @@ class ucf_college_tabbed_content_shortcode {
         return $replacement_data;
     }
 
+	static function replacement_print() {
+		echo self::replacement();
+	}
+
     /**
      * Only run this on plugin activation, as it's stored in the database
      */
@@ -119,4 +123,8 @@ class ucf_college_tabbed_content_shortcode {
 
 }
 
-new ucf_college_tabbed_content_shortcode();
+add_action( 'init', array( 'ucf_college_tabbed_content_shortcode', 'add_shortcode' ) );
+add_filter( 'query_vars', array('ucf_college_tabbed_content_shortcode', 'add_query_vars_filter' )); // tell wordpress about new url parameters
+add_filter( 'ucf_college_shortcode_menu_item', array('ucf_college_tabbed_content_shortcode', 'add_ckeditor_shortcode'));
+
+//new ucf_college_tabbed_content_shortcode();
