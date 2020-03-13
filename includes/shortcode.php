@@ -2,7 +2,7 @@
 
 class ucf_college_tabbed_content_shortcode {
     const shortcode_slug = 'ucf_college_tabbed_content'; // the shortcode text entered by the user (inside square brackets)
-    const shortcode_name = 'Tabbed Content';
+    const shortcode_name = 'Tabbed Content (deprecated - use blocks)';
     const shortcode_description = 'Tabbed sections with repeater content';
     //const get_param_group = 'people_group'; // group or category person is in
 
