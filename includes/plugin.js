@@ -1,6 +1,6 @@
 // Tab menu handler
 jQuery( document ).ready(function($) {
-    $('.toggle').click(function(event, element){
+    $(document).on('click','.toggle', function(event, element){
         var section_name = $(this).data('id');
         //console.log(section_name);
         $('.menu-expanded[for="' + section_name + '"]').show();
@@ -9,7 +9,7 @@ jQuery( document ).ready(function($) {
         $(this).addClass('tab-active');
         event.preventDefault();
     });
-    $('select.mobile').on('change', function(event, element){
+    $(document).on('change','select.mobile', function(event, element){
         var section_name = $(this).find(":checked").data('id');
         //console.log(section_name);
         $('.menu-expanded[for="' + section_name + '"]').show();

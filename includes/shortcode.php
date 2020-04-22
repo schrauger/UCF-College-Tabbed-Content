@@ -59,12 +59,19 @@ class ucf_college_tabbed_content_shortcode {
     <section class='button-menu'>";
 
             // print out all tabs (just the labels)
+	        $is_first = true;
             while (have_rows('tab_repeater')){
+            	if ($is_first){
+            		$class = 'button toggle tab-active';
+	            } else {
+            		$class = 'button toggle';
+	            }
                 the_row();
                 $tab_label = get_sub_field('tab_label');
                 $tab_id = sanitize_title_with_dashes($tab_label);
                 // output the tab header
-                $replacement_data .= "<a class='button toggle' data-id='{$tab_id}' href='#'>{$tab_label}</a>";
+                $replacement_data .= "<a class='{$class}' data-id='{$tab_id}' href='#'>{$tab_label}</a>";
+                $is_first = false;
             }
             $replacement_data .= "
     </section>";
@@ -72,13 +79,20 @@ class ucf_college_tabbed_content_shortcode {
 
             // output the tab content (the contentof items) in their own sections, not children of the tabs
             reset_rows();
+            $is_first = true;
             while (have_rows('tab_repeater')) {
+            	if ($is_first){
+					$style = 'display: block;';
+	            } else {
+            		$style = 'display: none;';
+	            }
                 the_row();
                 $tab_label = get_sub_field('tab_label');
                 $tab_content = get_sub_field('tab_content');
                 $tab_id = sanitize_title_with_dashes($tab_label);
+                $is_first = false;
                 $replacement_data .= "
-    <section class='menu-expanded' for='{$tab_id}'>
+    <section class='menu-expanded' for='{$tab_id}' style='{$style}'>
     <div class='tab-content'>{$tab_content}</div>
     </section>
     ";

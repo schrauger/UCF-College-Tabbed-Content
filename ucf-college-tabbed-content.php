@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF College Tabbed Content
 Description: Provides a shortcode for a tabbed content, to be used in the UCF Colleges Theme
-Version: 1.2.0
+Version: 1.3.0
 Author: Stephen Schrauger
 Plugin URI: https://github.com/schrauger/UCF-College-Tabbed-Content
 Github Plugin URI: schrauger/UCF-College-Tabbed-Content
@@ -19,8 +19,8 @@ include plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
 class ucf_college_tabbed_content {
     function __construct() {
         // plugin css/js
-        add_action('wp_enqueue_scripts', array($this, 'add_css'));
-        add_action('wp_enqueue_scripts', array($this, 'add_js'));
+        add_action('enqueue_block_assets', array($this, 'add_css'));
+        add_action('enqueue_block_assets', array($this, 'add_js'));
 
         // plugin activation hooks
         register_activation_hook( __FILE__, array($this,'activation'));
