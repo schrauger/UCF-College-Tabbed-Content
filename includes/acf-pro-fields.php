@@ -25,7 +25,7 @@ class ucf_college_tabbed_content_acf_pro_fields {
 			                           'description'		=> __('Tabbed sections with repeater content.'),
 			                           'render_callback'	=> array('ucf_college_tabbed_content_shortcode','replacement_print'),
 			                           'category'			=> 'layout',
-			                           'icon'				=> 'screenoptions',
+			                           'icon'				=> 'index-card',
 			                           'keywords'			=> array( 'ucf', 'college','tabbed','content' ),
 		                           ));
 	        }
