@@ -27,6 +27,7 @@ class ucf_college_tabbed_content_acf_pro_fields {
 			                           'category'			=> 'layout',
 			                           'icon'				=> 'index-card',
 			                           'keywords'			=> array( 'ucf', 'college','tabbed','content' ),
+			                           'mode'               => 'edit',
 		                           ));
 	        }
 
