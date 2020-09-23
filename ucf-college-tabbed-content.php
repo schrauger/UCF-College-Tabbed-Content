@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF College Tabbed Content
 Description: Provides a shortcode for a tabbed content, to be used in the UCF Colleges Theme
-Version: 1.1.2
+Version: 1.4.0
 Author: Stephen Schrauger
 Plugin URI: https://github.com/schrauger/UCF-College-Tabbed-Content
 Github Plugin URI: schrauger/UCF-College-Tabbed-Content
@@ -11,16 +11,16 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
-include plugin_dir_path( __FILE__ ) . 'includes/common/tinymce.php';
-include plugin_dir_path( __FILE__ ) . 'includes/common/shortcode-taxonomy.php';
+//include plugin_dir_path( __FILE__ ) . 'includes/common/tinymce.php';
+//include plugin_dir_path( __FILE__ ) . 'includes/common/shortcode-taxonomy.php';
 include plugin_dir_path( __FILE__ ) . 'includes/acf-pro-fields.php';
 include plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
 
 class ucf_college_tabbed_content {
     function __construct() {
         // plugin css/js
-        add_action('wp_enqueue_scripts', array($this, 'add_css'));
-        add_action('wp_enqueue_scripts', array($this, 'add_js'));
+        add_action('enqueue_block_assets', array($this, 'add_css'));
+        add_action('enqueue_block_assets', array($this, 'add_js'));
 
         // plugin activation hooks
         register_activation_hook( __FILE__, array($this,'activation'));
@@ -58,17 +58,17 @@ class ucf_college_tabbed_content {
     // run on plugin activation
     function activation(){
         // insert the shortcode for this plugin as a term in the taxonomy
-        ucf_college_tabbed_content_shortcode::insert_shortcode_term();
+        //ucf_college_tabbed_content_shortcode::insert_shortcode_term();
     }
 
     // run on plugin deactivation
     function deactivation(){
-        ucf_college_tabbed_content_shortcode::delete_shortcode_term();
+        //ucf_college_tabbed_content_shortcode::delete_shortcode_term();
     }
 
     // run on plugin complete uninstall
     function uninstall(){
-        ucf_college_tabbed_content_shortcode::delete_shortcode_term();
+        //ucf_college_tabbed_content_shortcode::delete_shortcode_term();
     }
 }
 

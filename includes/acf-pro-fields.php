@@ -16,6 +16,21 @@ class ucf_college_tabbed_content_acf_pro_fields {
 
     static function create_fields() {
         if ( function_exists( 'acf_add_local_field_group' ) ) {
+
+	        if( function_exists('acf_register_block') ) {
+		        // register a testimonial block
+		        acf_register_block(array(
+			                           'name'				=> 'ucf_college_tabbed_content',
+			                           'title'				=> __('Tabbed Content'),
+			                           'description'		=> __('Tabbed sections with repeater content.'),
+			                           'render_callback'	=> array('ucf_college_tabbed_content_shortcode','replacement_print'),
+			                           'category'			=> 'layout',
+			                           'icon'				=> 'index-card',
+			                           'keywords'			=> array( 'ucf', 'college','tabbed','content' ),
+			                           'mode'               => 'edit',
+		                           ));
+	        }
+
             acf_add_local_field_group(
                 array(
                     'key'                   => 'group_5c59e0b493529',
@@ -84,6 +99,13 @@ class ucf_college_tabbed_content_acf_pro_fields {
                         ),
                     ),
                     'location'              => array(
+	                    array(
+		                    array(
+			                    'param'    => 'block',
+			                    'operator' => '==',
+			                    'value'    => 'acf/ucf-college-tabbed-content',
+		                    ),
+	                    ),
                         array(
                             array(
                                 'param'    => 'post_taxonomy',
