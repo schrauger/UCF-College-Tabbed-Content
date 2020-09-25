@@ -35,14 +35,8 @@
     border-right-width: 1px;
     border-bottom-width: 1px;
     border-top-width: 0px; }
-    .tabs .menu-expanded li {
-      list-style: none;
-      padding: 10px;
-      margin-left: -65px; }
-      .tabs .menu-expanded li:nth-child(odd) {
-        background: #fff; }
-    .tabs .menu-expanded tr:nth-child(odd) {
-      background: #fff; }
+    .tabs .menu-expanded .nav-link {
+      padding: 0; }
     .tabs .menu-expanded .button {
       margin-bottom: 10px; }
     .tabs .menu-expanded[for=online-library]:before {
@@ -55,5 +49,3 @@
 @media (max-width: 1000px) {
   .tabs .button {
     width: 100%; } }
-
-/*# sourceMappingURL=plugin.css.map */

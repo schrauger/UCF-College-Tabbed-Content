@@ -50,23 +50,6 @@ $lightgreybr: #dcdbdb;
 		border-bottom-width: 1px;
 		border-top-width: 0px;
 
-		ul {
-			padding: 0;
-
-			li {
-				list-style: none;
-				padding: 10px;
-
-				&:nth-child(odd) {
-					background: #fff;
-				}
-			}
-
-			tr:nth-child(odd) {
-				background: #fff;
-			}
-		}
-
 		.nav-link {
 			padding: 0;
 		}
