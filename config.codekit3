@@ -144,6 +144,14 @@
 		"oA": 0,
 		"oAP": "/repo-setup.sh",
 		"oF": 0
+		},
+	"/ucf-college-tabbed-content.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/ucf-college-tabbed-content.php",
+		"oF": 0
 		}
 	},
 "hooks": [
